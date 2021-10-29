@@ -124,4 +124,11 @@ public class QuantityMeasurementTest {
         double actualResult = yard.yardToInchConversion();
         Assertions.assertEquals(36, actualResult);
     }
+
+    @Test
+    void given1YardAnd3Feet_WhenCompared_ShouldReturnEqual() {
+        Yard yard = new Yard(1.0);
+        double actualResult = yard.yardToFeetConversion();
+        Assertions.assertEquals(3, actualResult);
+    }
 }

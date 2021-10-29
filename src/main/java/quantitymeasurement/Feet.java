@@ -14,6 +14,14 @@ public class Feet {
         this.value = value;
     }
 
+    /**
+     * Purpose : This method is created to convert feet into inches
+     * @return actual value
+     */
+    public double feetToInchConversion() {
+        return 0;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -16,10 +16,20 @@ public class Feet {
 
     /**
      * Purpose : This method is created to convert feet into inches
+     *
      * @return actual value
      */
     public double feetToInchConversion() {
         return value * 12;
+    }
+
+    /**
+     * Purpose : This method is created to convert feet into yards
+     *
+     * @return actual value
+     */
+    public double feetToYardConversion() {
+        return 0;
     }
 
     @Override

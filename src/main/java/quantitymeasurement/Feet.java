@@ -8,9 +8,6 @@ package quantitymeasurement;
  * @since 2021-10-29
  */
 public class Feet {
-
-    /* This method is created to print welcome message */
-    public void printWelcomeMessage() {
-        System.out.println("Welcome to Quantity Measurement Program");
+    public Feet(double value) {
     }
 }

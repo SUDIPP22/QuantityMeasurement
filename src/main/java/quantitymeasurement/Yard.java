@@ -22,7 +22,7 @@ public class Yard {
      * @return actual value
      */
     public double yardToFeetConversion() {
-        return 0;
+        return value * 3;
     }
 
     @Override

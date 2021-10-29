@@ -29,7 +29,7 @@ public class Feet {
      * @return actual value
      */
     public double feetToYardConversion() {
-        return 0;
+        return value / 3;
     }
 
     @Override

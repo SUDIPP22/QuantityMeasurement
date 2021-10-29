@@ -94,4 +94,12 @@ public class QuantityMeasurementTest {
         double actualResult = feet.feetToYardConversion();
         Assertions.assertEquals(1, actualResult);
     }
+
+    @Test
+    void given1FeetAnd1Yard_WhenCompared_ShouldReturnNotEqual() {
+        Feet feet = new Feet(1.0);
+        double actualResult = feet.feetToYardConversion();
+        double expectedResult = 1;
+        Assertions.assertNotEquals(expectedResult, actualResult);
+    }
 }

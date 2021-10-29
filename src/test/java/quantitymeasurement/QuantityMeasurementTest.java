@@ -80,4 +80,11 @@ public class QuantityMeasurementTest {
         double actualResult = feet.feetToInchConversion();
         Assertions.assertEquals(12, actualResult);
     }
+
+    @Test
+    void given2FeetAnd12Inch_WhenCompared_ShouldReturnNotEqual() {
+        Feet feet = new Feet(2.0);
+        double actualResult = feet.feetToInchConversion();
+        Assertions.assertNotEquals(12, actualResult);
+    }
 }

@@ -19,7 +19,7 @@ public class Feet {
      * @return actual value
      */
     public double feetToInchConversion() {
-        return 0;
+        return value * 12;
     }
 
     @Override

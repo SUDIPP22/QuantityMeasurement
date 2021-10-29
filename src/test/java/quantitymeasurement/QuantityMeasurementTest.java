@@ -17,4 +17,11 @@ public class QuantityMeasurementTest {
         Feet feet2 = null;
         Assertions.assertNotEquals(feet1, feet2);
     }
+
+    @Test
+    void givenReference0FeetAnd1Feet_ShouldReturnNotEqual() {
+        Feet feet1 = new Feet(0.0);
+        Feet feet2 = new Feet(1.0);
+        Assertions.assertNotEquals(feet1, feet2);
+    }
 }

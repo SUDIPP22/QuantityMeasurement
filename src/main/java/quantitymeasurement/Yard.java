@@ -13,7 +13,7 @@ public class Yard {
      * @return actual value
      */
     public double yardToInchConversion() {
-        return 0;
+        return value * 36;
     }
 
     @Override

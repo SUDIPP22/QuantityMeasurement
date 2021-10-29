@@ -102,4 +102,11 @@ public class QuantityMeasurementTest {
         double expectedResult = 1;
         Assertions.assertNotEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void given36InchAnd1Yard_WhenCompared_ShouldReturnEqual() {
+        Inch inch = new Inch(36.0);
+        double actualResult = inch.inchToYardConversion();
+        Assertions.assertEquals(1, actualResult);
+    }
 }

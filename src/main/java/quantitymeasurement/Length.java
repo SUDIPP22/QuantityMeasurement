@@ -13,7 +13,7 @@ public class Length {
     private final double FEET_TO_INCH = 12;
 
     public enum Unit {
-        FEET, INCH
+        FEET, YARD, INCH
     }
 
     public Length(Unit unit, double value) {
@@ -36,6 +36,8 @@ public class Length {
             return Double.compare(this.value, that.value) == 0;
         if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
             return Double.compare(this.value, that.value * FEET_TO_INCH) == 0;
+        if (this.unit.equals(Unit.YARD) && that.unit.equals(Unit.YARD))
+            return Double.compare(this.value, that.value) == 0;
         return false;
     }
 

@@ -78,64 +78,55 @@ public class QuantityMeasurementTest {
     void given1FeetAnd1Inch_WhenCompared_ShouldReturnNotEqual() {
         Length feet = new Length(Length.Unit.FEET, 1.0);
         Length inch = new Length(Length.Unit.INCH, 1.0);
-        Assertions.assertNotEquals(feet, inch);
+        boolean compareCheck = feet.compare(inch);
+        Assertions.assertFalse(compareCheck);
     }
 
     @Test
-    void given1FeetAnd12Inch_WhenConverting_ShouldReturnEqual() {
-        Length feet = new Length(Length.Unit.FEET, 1.0);
-        double actualResult = feet.feetToInchConversion();
-        Assertions.assertEquals(12, actualResult);
+    void given0FeetAnd0Inch_WhenCompared_ShouldReturnEqualLength() {
+        Length feet = new Length(Length.Unit.FEET, 0.0);
+        Length inch = new Length(Length.Unit.INCH, 0.0);
+        boolean compareCheck = feet.compare(inch);
+        Assertions.assertTrue(compareCheck);
     }
 
     @Test
-    void given2FeetAnd12Inch_WhenConverting_ShouldReturnNotEqual() {
-        Length feet = new Length(Length.Unit.FEET, 2.0);
-        double actualResult = feet.feetToInchConversion();
-        Assertions.assertNotEquals(12, actualResult);
-    }
-
-    @Test
-    void given3FeetAnd1Yard_WhenConverting_ShouldReturnEqual() {
-        Length feet = new Length(Length.Unit.FEET, 3.0);
-        double actualResult = feet.feetToYardConversion();
-        Assertions.assertEquals(1, actualResult);
-    }
-
-    @Test
-    void given1FeetAnd1Yard_WhenConverting_ShouldReturnNotEqual() {
-        Length feet = new Length(Length.Unit.FEET, 1.0);
-        double actualResult = feet.feetToYardConversion();
-        double expectedResult = 1;
-        Assertions.assertNotEquals(expectedResult, actualResult);
-    }
-
-    @Test
-    void given36InchAnd1Yard_WhenConverting_ShouldReturnEqual() {
-        Length inch = new Length(Length.Unit.INCH, 36.0);
-        double actualResult = inch.inchToYardConversion();
-        Assertions.assertEquals(1, actualResult);
-    }
-
-    @Test
-    void given1InchAnd1Yard_WhenConverting_ShouldReturnNotEqual() {
+    void given1InchAnd1Feet_WhenCompared_ShouldReturnNotEqualLength() {
         Length inch = new Length(Length.Unit.INCH, 1.0);
-        double actualResult = inch.inchToYardConversion();
-        double expectedResult = 1;
-        Assertions.assertNotEquals(expectedResult, actualResult);
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        boolean compareCheck = inch.compare(feet);
+        Assertions.assertFalse(compareCheck);
     }
 
     @Test
-    void given1YardAnd36Inch_WhenConverting_ShouldReturnEqual() {
-        Length yard = new Length(Length.Unit.YARD, 1.0);
-        double actualResult = yard.yardToInchConversion();
-        Assertions.assertEquals(36, actualResult);
+    void given1FeetAnd1Feet_WhenCompared_ShouldReturnEqualLength() {
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        Length feet2 = new Length(Length.Unit.FEET, 1.0);
+        boolean compareCheck = feet1.compare(feet2);
+        Assertions.assertTrue(compareCheck);
     }
 
     @Test
-    void given1YardAnd3Feet_WhenConverting_ShouldReturnEqual() {
-        Length yard = new Length(Length.Unit.YARD, 1.0);
-        double actualResult = yard.yardToFeetConversion();
-        Assertions.assertEquals(3, actualResult);
+    void given1InchAnd1Inch_WhenCompared_ShouldReturnEqualLength() {
+        Length inch1 = new Length(Length.Unit.INCH, 1.0);
+        Length inch2 = new Length(Length.Unit.INCH, 1.0);
+        boolean compareCheck = inch1.compare(inch2);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1FeetAnd12Inch_WhenCompared_ShouldReturnEqualLength() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 12.0);
+        boolean compareCheck = feet.compare(inch);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given12InchAnd1Feet_WhenCompared_ShouldReturnEqualLength() {
+        Length inch = new Length(Length.Unit.INCH, 12.0);
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        boolean compareCheck = inch.compare(feet);
+        Assertions.assertTrue(compareCheck);
     }
 }

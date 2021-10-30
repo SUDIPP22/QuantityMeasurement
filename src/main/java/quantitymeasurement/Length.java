@@ -10,9 +10,10 @@ package quantitymeasurement;
 public class Length {
     private final Unit unit;
     private final double value;
+    private final double FEET_TO_INCH = 12;
 
     public enum Unit {
-        FEET, INCH, YARD
+        FEET, INCH
     }
 
     public Length(Unit unit, double value) {
@@ -21,48 +22,21 @@ public class Length {
     }
 
     /**
-     * Purpose : This method is created to convert feet into inches
+     * Purpose : This method is created to compare the unit lengths
      *
-     * @return actual value
+     * @param that : This is the parameter which is taking a length
+     * @return the compared value
      */
-    public double feetToInchConversion() {
-        return value * 12;
-    }
-
-    /**
-     * Purpose : This method is created to convert feet into yards
-     *
-     * @return actual value
-     */
-    public double feetToYardConversion() {
-        return value / 3;
-    }
-
-    /**
-     * Purpose : This method is created to convert inches into yards
-     *
-     * @return actual value
-     */
-    public double inchToYardConversion() {
-        return value / 36;
-    }
-
-    /**
-     * Purpose : This method is created to convert yards into inches
-     *
-     * @return actual value
-     */
-    public double yardToInchConversion() {
-        return value * 36;
-    }
-
-    /**
-     * Purpose : This method is created to convert yards into feet
-     *
-     * @return actual value
-     */
-    public double yardToFeetConversion() {
-        return value * 3;
+    public boolean compare(Length that) {
+        if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
+            return Double.compare(this.value, that.value) == 0;
+        if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
+        if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value, that.value) == 0;
+        if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
+            return Double.compare(this.value, that.value * FEET_TO_INCH) == 0;
+        return false;
     }
 
     @Override

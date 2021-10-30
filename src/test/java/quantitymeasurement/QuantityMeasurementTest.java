@@ -134,16 +134,14 @@ public class QuantityMeasurementTest {
     void given0YardAnd0Yard_ShouldReturnEqual() {
         Length yard1 = new Length(Length.Unit.YARD, 0.0);
         Length yard2 = new Length(Length.Unit.YARD, 0.0);
-        boolean compareCheck = yard1.compare(yard2);
-        Assertions.assertTrue(compareCheck);
+        Assertions.assertEquals(yard1, yard2);
     }
 
     @Test
     void givenValue0YardAnd1Yard_ShouldReturnNotEqual() {
         Length yard1 = new Length(Length.Unit.YARD, 0.0);
         Length yard2 = new Length(Length.Unit.YARD, 1.0);
-        boolean compareCheck = yard1.compare(yard2);
-        Assertions.assertFalse(compareCheck);
+        Assertions.assertNotEquals(yard1, yard2);
     }
 
     @Test

@@ -486,4 +486,141 @@ public class QuantityMeasurementTest {
         UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Volume.LITRE, 2.0);
         Assertions.assertEquals(expectedValue, actualValue);
     }
+
+    @Test
+    void given0GramAnd0Gram_ShouldReturnEqual() {
+        UnitMeasurementSystem gram1 = new UnitMeasurementSystem(Weight.GRAM, 0.0);
+        UnitMeasurementSystem gram2 = new UnitMeasurementSystem(Weight.GRAM, 0.0);
+        Assertions.assertEquals(gram1, gram2);
+    }
+
+    @Test
+    void givenValue0GramAnd1Gram_ShouldReturnNotEqual() {
+        UnitMeasurementSystem gram1 = new UnitMeasurementSystem(Weight.GRAM, 0.0);
+        UnitMeasurementSystem gram2 = new UnitMeasurementSystem(Weight.GRAM, 1.0);
+        Assertions.assertNotEquals(gram1, gram2);
+    }
+
+    @Test
+    void given0GramAndNullGram_ShouldReturnNotEqual() {
+        UnitMeasurementSystem gram1 = new UnitMeasurementSystem(Weight.GRAM, 0.0);
+        UnitMeasurementSystem gram2 = null;
+        Assertions.assertNotEquals(gram1, gram2);
+    }
+
+    @Test
+    void givenReference0GramAnd1Gram_ShouldReturnNotEqual() {
+        UnitMeasurementSystem gram1 = new UnitMeasurementSystem(Weight.GRAM, 0.0);
+        UnitMeasurementSystem gram2 = new UnitMeasurementSystem(Weight.GRAM, 1.0);
+        Assertions.assertNotEquals(gram1, gram2);
+    }
+
+    @Test
+    void givenType0GramAnd1Gram_ShouldReturnEqual() {
+        UnitMeasurementSystem gram1 = new UnitMeasurementSystem(Weight.GRAM, 0.0);
+        UnitMeasurementSystem gram2 = new UnitMeasurementSystem(Weight.GRAM, 1.0);
+        Assertions.assertEquals(gram1.getClass(), gram2.getClass());
+    }
+
+    @Test
+    void given0KilogramAnd0Kilogram_ShouldReturnEqual() {
+        UnitMeasurementSystem kilogram1 = new UnitMeasurementSystem(Weight.KILOGRAM, 0.0);
+        UnitMeasurementSystem kilogram2 = new UnitMeasurementSystem(Weight.KILOGRAM, 0.0);
+        Assertions.assertEquals(kilogram1, kilogram2);
+    }
+
+    @Test
+    void givenValue0KilogramAnd1Kilogram_ShouldReturnNotEqual() {
+        UnitMeasurementSystem kilogram1 = new UnitMeasurementSystem(Weight.KILOGRAM, 0.0);
+        UnitMeasurementSystem kilogram2 = new UnitMeasurementSystem(Weight.KILOGRAM, 1.0);
+        Assertions.assertNotEquals(kilogram1, kilogram2);
+    }
+
+    @Test
+    void given0KilogramAndNullKilogram_ShouldReturnNotEqual() {
+        UnitMeasurementSystem kilogram1 = new UnitMeasurementSystem(Weight.KILOGRAM, 0.0);
+        UnitMeasurementSystem kilogram2 = null;
+        Assertions.assertNotEquals(kilogram1, kilogram2);
+    }
+
+    @Test
+    void givenReference0KilogramAnd1Kilogram_ShouldReturnNotEqual() {
+        UnitMeasurementSystem kilogram1 = new UnitMeasurementSystem(Weight.KILOGRAM, 0.0);
+        UnitMeasurementSystem kilogram2 = new UnitMeasurementSystem(Weight.KILOGRAM, 1.0);
+        Assertions.assertNotEquals(kilogram1, kilogram2);
+    }
+
+    @Test
+    void givenType0KilogramAnd1Kilogram_ShouldReturnEqual() {
+        UnitMeasurementSystem kilogram1 = new UnitMeasurementSystem(Weight.KILOGRAM, 0.0);
+        UnitMeasurementSystem kilogram2 = new UnitMeasurementSystem(Weight.KILOGRAM, 1.0);
+        Assertions.assertEquals(kilogram1.getClass(), kilogram2.getClass());
+    }
+
+    @Test
+    void given0TonneAnd0Tonne_ShouldReturnEqual() {
+        UnitMeasurementSystem tonne1 = new UnitMeasurementSystem(Weight.TONNE, 0.0);
+        UnitMeasurementSystem tonne2 = new UnitMeasurementSystem(Weight.TONNE, 0.0);
+        Assertions.assertEquals(tonne1, tonne2);
+    }
+
+    @Test
+    void givenValue0TonneAnd1Tonne_ShouldReturnNotEqual() {
+        UnitMeasurementSystem tonne1 = new UnitMeasurementSystem(Weight.TONNE, 0.0);
+        UnitMeasurementSystem tonne2 = new UnitMeasurementSystem(Weight.TONNE, 1.0);
+        Assertions.assertNotEquals(tonne1, tonne2);
+    }
+
+    @Test
+    void given0TonneAndNullTonne_ShouldReturnNotEqual() {
+        UnitMeasurementSystem tonne1 = new UnitMeasurementSystem(Weight.TONNE, 0.0);
+        UnitMeasurementSystem tonne2 = null;
+        Assertions.assertNotEquals(tonne1, tonne2);
+    }
+
+    @Test
+    void givenReference0TonneAnd1Tonne_ShouldReturnNotEqual() {
+        UnitMeasurementSystem tonne1 = new UnitMeasurementSystem(Weight.TONNE, 0.0);
+        UnitMeasurementSystem tonne2 = new UnitMeasurementSystem(Weight.TONNE, 1.0);
+        Assertions.assertNotEquals(tonne1, tonne2);
+    }
+
+    @Test
+    void givenType0TonneAnd1Tonne_ShouldReturnEqual() {
+        UnitMeasurementSystem tonne1 = new UnitMeasurementSystem(Weight.TONNE, 0.0);
+        UnitMeasurementSystem tonne2 = new UnitMeasurementSystem(Weight.TONNE, 1.0);
+        Assertions.assertEquals(tonne1.getClass(), tonne2.getClass());
+    }
+
+    @Test
+    void given1KilogramAnd1000Gram_WhenCompared_ShouldReturnEqualWeight() {
+        UnitMeasurementSystem kilogram = new UnitMeasurementSystem(Weight.KILOGRAM, 1.0);
+        UnitMeasurementSystem gram = new UnitMeasurementSystem(Weight.GRAM, 1000.0);
+        boolean compareCheck = kilogram.compare(gram);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1000GramAnd1Kilogram_WhenCompared_ShouldReturnEqualWeight() {
+        UnitMeasurementSystem gram = new UnitMeasurementSystem(Weight.GRAM, 1000.0);
+        UnitMeasurementSystem kilogram = new UnitMeasurementSystem(Weight.KILOGRAM, 1.0);
+        boolean compareCheck = gram.compare(kilogram);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1TonneAnd1000Kilogram_WhenCompared_ShouldReturnEqualWeight() {
+        UnitMeasurementSystem tonne = new UnitMeasurementSystem(Weight.TONNE, 1.0);
+        UnitMeasurementSystem kilogram = new UnitMeasurementSystem(Weight.KILOGRAM, 1000.0);
+        boolean compareCheck = tonne.compare(kilogram);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1000KilogramAnd1Tonne_WhenCompared_ShouldReturnEqualWeight() {
+        UnitMeasurementSystem kilogram = new UnitMeasurementSystem(Weight.KILOGRAM, 1000.0);
+        UnitMeasurementSystem tonne = new UnitMeasurementSystem(Weight.TONNE, 1.0);
+        boolean compareCheck = kilogram.compare(tonne);
+        Assertions.assertTrue(compareCheck);
+    }
 }

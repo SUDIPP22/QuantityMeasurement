@@ -307,4 +307,183 @@ public class QuantityMeasurementTest {
         UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Length.INCH, 3.0);
         Assertions.assertEquals(expectedValue, actualValue);
     }
+
+    @Test
+    void given0GallonAnd0Gallon_ShouldReturnEqual() {
+        UnitMeasurementSystem gallon1 = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        UnitMeasurementSystem gallon2 = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        Assertions.assertEquals(gallon1, gallon2);
+    }
+
+    @Test
+    void givenValue0GallonAnd1Gallon_ShouldReturnNotEqual() {
+        UnitMeasurementSystem gallon1 = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        UnitMeasurementSystem gallon2 = new UnitMeasurementSystem(Volume.GALLON, 1.0);
+        Assertions.assertNotEquals(gallon1, gallon2);
+    }
+
+    @Test
+    void given0GallonAndNullGallon_ShouldReturnNotEqual() {
+        UnitMeasurementSystem gallon1 = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        UnitMeasurementSystem gallon2 = null;
+        Assertions.assertNotEquals(gallon1, gallon2);
+    }
+
+    @Test
+    void givenReference0GallonAnd1Gallon_ShouldReturnNotEqual() {
+        UnitMeasurementSystem gallon1 = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        UnitMeasurementSystem gallon2 = new UnitMeasurementSystem(Volume.GALLON, 1.0);
+        Assertions.assertNotEquals(gallon1, gallon2);
+    }
+
+    @Test
+    void givenType0GallonAnd1Gallon_ShouldReturnEqual() {
+        UnitMeasurementSystem gallon1 = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        UnitMeasurementSystem gallon2 = new UnitMeasurementSystem(Volume.GALLON, 1.0);
+        Assertions.assertEquals(gallon1.getClass(), gallon2.getClass());
+    }
+
+    @Test
+    void given0LitreAnd0Litre_ShouldReturnEqual() {
+        UnitMeasurementSystem litre1 = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        UnitMeasurementSystem litre2 = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        Assertions.assertEquals(litre1, litre2);
+    }
+
+    @Test
+    void givenValue0LitreAnd1Litre_ShouldReturnNotEqual() {
+        UnitMeasurementSystem litre1 = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        UnitMeasurementSystem litre2 = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        Assertions.assertNotEquals(litre1, litre2);
+    }
+
+    @Test
+    void given0LitreAndNullLitre_ShouldReturnNotEqual() {
+        UnitMeasurementSystem litre1 = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        UnitMeasurementSystem litre2 = null;
+        Assertions.assertNotEquals(litre1, litre2);
+    }
+
+    @Test
+    void givenReference0LitreAnd1Litre_ShouldReturnNotEqual() {
+        UnitMeasurementSystem litre1 = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        UnitMeasurementSystem litre2 = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        Assertions.assertNotEquals(litre1, litre2);
+    }
+
+    @Test
+    void givenType0LitreAnd1Litre_ShouldReturnEqual() {
+        UnitMeasurementSystem litre1 = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        UnitMeasurementSystem litre2 = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        Assertions.assertEquals(litre1.getClass(), litre2.getClass());
+    }
+
+    @Test
+    void given0MillilitreAnd0Millilitre_ShouldReturnEqual() {
+        UnitMeasurementSystem millilitre1 = new UnitMeasurementSystem(Volume.MILLILITRE, 0.0);
+        UnitMeasurementSystem millilitre2 = new UnitMeasurementSystem(Volume.MILLILITRE, 0.0);
+        Assertions.assertEquals(millilitre1, millilitre2);
+    }
+
+    @Test
+    void givenValue0MillilitreAnd1Millilitre_ShouldReturnNotEqual() {
+        UnitMeasurementSystem millilitre1 = new UnitMeasurementSystem(Volume.MILLILITRE, 0.0);
+        UnitMeasurementSystem millilitre2 = new UnitMeasurementSystem(Volume.MILLILITRE, 1.0);
+        Assertions.assertNotEquals(millilitre1, millilitre2);
+    }
+
+    @Test
+    void given0MillilitreAndNullMillilitre_ShouldReturnNotEqual() {
+        UnitMeasurementSystem millilitre1 = new UnitMeasurementSystem(Volume.MILLILITRE, 0.0);
+        UnitMeasurementSystem millilitre2 = null;
+        Assertions.assertNotEquals(millilitre1, millilitre2);
+    }
+
+    @Test
+    void givenReference0MillilitreAnd1Millilitre_ShouldReturnNotEqual() {
+        UnitMeasurementSystem millilitre1 = new UnitMeasurementSystem(Volume.MILLILITRE, 0.0);
+        UnitMeasurementSystem millilitre2 = new UnitMeasurementSystem(Volume.MILLILITRE, 1.0);
+        Assertions.assertNotEquals(millilitre1, millilitre2);
+    }
+
+    @Test
+    void givenType0MillilitreAnd1Millilitre_ShouldReturnEqual() {
+        UnitMeasurementSystem millilitre1 = new UnitMeasurementSystem(Volume.MILLILITRE, 0.0);
+        UnitMeasurementSystem millilitre2 = new UnitMeasurementSystem(Volume.MILLILITRE, 1.0);
+        Assertions.assertEquals(millilitre1.getClass(), millilitre2.getClass());
+    }
+
+    @Test
+    void given0GallonAnd0Litre_WhenCompared_ShouldReturnEqualVolume() {
+        UnitMeasurementSystem gallon = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        boolean compareCheck = gallon.compare(litre);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given0GallonAnd1Litre_WhenCompared_ShouldReturnNotEqualVolume() {
+        UnitMeasurementSystem gallon = new UnitMeasurementSystem(Volume.GALLON, 0.0);
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        boolean compareCheck = gallon.compare(litre);
+        Assertions.assertFalse(compareCheck);
+    }
+
+    @Test
+    void given1GallonAnd3Point78Litre_WhenCompared_ShouldReturnEqualVolume() {
+        UnitMeasurementSystem gallon = new UnitMeasurementSystem(Volume.GALLON, 1.0);
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 3.78);
+        boolean compareCheck = gallon.compare(litre);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given3Point78LitreAnd1Gallon_WhenCompared_ShouldReturnEqualVolume() {
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 3.78);
+        UnitMeasurementSystem gallon = new UnitMeasurementSystem(Volume.GALLON, 1.0);
+        boolean compareCheck = litre.compare(gallon);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given0LitreAnd0Millilitre_WhenCompared_ShouldReturnEqualVolume() {
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 0.0);
+        UnitMeasurementSystem millilitre = new UnitMeasurementSystem(Volume.MILLILITRE, 0.0);
+        boolean compareCheck = litre.compare(millilitre);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1LitreAnd1000Millilitre_WhenCompared_ShouldReturnEqualVolume() {
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        UnitMeasurementSystem millilitre = new UnitMeasurementSystem(Volume.MILLILITRE, 1000.0);
+        boolean compareCheck = litre.compare(millilitre);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1000MillilitreAnd1Litre_WhenCompared_ShouldReturnEqualVolume() {
+        UnitMeasurementSystem millilitre = new UnitMeasurementSystem(Volume.MILLILITRE, 1000.0);
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        boolean compareCheck = millilitre.compare(litre);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1GallonAnd3Point78Litre_WhenAdded_ShouldReturn7Point57Litre() {
+        UnitMeasurementSystem gallon = new UnitMeasurementSystem(Volume.GALLON, 1.0);
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 3.78);
+        UnitMeasurementSystem actualValue = gallon.addition(litre, Volume.LITRE);
+        UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Volume.LITRE, 7.56);
+        Assertions.assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void given1LitreAnd1000Millilitre_WhenAdded_ShouldReturn2Litre() {
+        UnitMeasurementSystem litre = new UnitMeasurementSystem(Volume.LITRE, 1.0);
+        UnitMeasurementSystem millilitre = new UnitMeasurementSystem(Volume.MILLILITRE, 1000.0);
+        UnitMeasurementSystem actualValue = litre.addition(millilitre, Volume.LITRE);
+        UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Volume.LITRE, 2.0);
+        Assertions.assertEquals(expectedValue, actualValue);
+    }
 }

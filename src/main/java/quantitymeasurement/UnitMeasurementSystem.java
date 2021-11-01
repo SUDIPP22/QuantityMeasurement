@@ -42,4 +42,16 @@ public class UnitMeasurementSystem {
         UnitMeasurementSystem that = (UnitMeasurementSystem) o;
         return Double.compare(that.value, value) == 0 && unit.equals(that.unit);
     }
+
+    /**
+     * Purpose : This method is created for addition of units
+     *
+     * @param that         This is the first parameter which is taking the unit length value
+     * @param requiredUnit This is the second parameter which is taking enum variables
+     * @return the adding value
+     */
+    public UnitMeasurementSystem addition(UnitMeasurementSystem that, MeasurementUnits requiredUnit) {
+        double sumOfInput = this.unit.convertToBaseUnit(this) + that.unit.convertToBaseUnit(that);
+        return new UnitMeasurementSystem(requiredUnit, sumOfInput);
+    }
 }

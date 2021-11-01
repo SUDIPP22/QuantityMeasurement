@@ -271,4 +271,40 @@ public class QuantityMeasurementTest {
         boolean compareCheck = centimeter.compare(inch);
         Assertions.assertTrue(compareCheck);
     }
+
+    @Test
+    void given2InchAnd2Inch_WhenAdded_ShouldReturn4Inch() {
+        UnitMeasurementSystem inch1 = new UnitMeasurementSystem(Length.INCH, 2.0);
+        UnitMeasurementSystem inch2 = new UnitMeasurementSystem(Length.INCH, 2.0);
+        UnitMeasurementSystem actualValue = inch1.addition(inch2, Length.INCH);
+        UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Length.INCH, 4.0);
+        Assertions.assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void given1FeetAnd2Inch_WhenAdded_ShouldReturn14Inch() {
+        UnitMeasurementSystem feet = new UnitMeasurementSystem(Length.FEET, 1.0);
+        UnitMeasurementSystem inch = new UnitMeasurementSystem(Length.INCH, 2.0);
+        UnitMeasurementSystem actualValue = feet.addition(inch, Length.INCH);
+        UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Length.INCH, 14.0);
+        Assertions.assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void given1FeetAnd1Feet_WhenAdded_ShouldReturn24Inch() {
+        UnitMeasurementSystem feet1 = new UnitMeasurementSystem(Length.FEET, 1.0);
+        UnitMeasurementSystem feet2 = new UnitMeasurementSystem(Length.FEET, 1.0);
+        UnitMeasurementSystem actualValue = feet1.addition(feet2, Length.INCH);
+        UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Length.INCH, 24.0);
+        Assertions.assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void given2InchAnd2Point5Centimeter_WhenAdded_ShouldReturn3Inch() {
+        UnitMeasurementSystem inch = new UnitMeasurementSystem(Length.INCH, 2.0);
+        UnitMeasurementSystem centimeter = new UnitMeasurementSystem(Length.CENTIMETER, 2.5);
+        UnitMeasurementSystem actualValue = inch.addition(centimeter, Length.INCH);
+        UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Length.INCH, 3.0);
+        Assertions.assertEquals(expectedValue, actualValue);
+    }
 }

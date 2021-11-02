@@ -131,14 +131,6 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    void given1InchAnd_1And12ThOfFeet_WhenCompared_ShouldReturnEqualLength() {
-        UnitMeasurementSystem inch = new UnitMeasurementSystem(Length.INCH, 1.0);
-        UnitMeasurementSystem feet = new UnitMeasurementSystem(Length.FEET, 0.0833);
-        boolean compareCheck = inch.compare(feet);
-        Assertions.assertTrue(compareCheck);
-    }
-
-    @Test
     void given0YardAnd0Yard_ShouldReturnEqual() {
         UnitMeasurementSystem yard1 = new UnitMeasurementSystem(Length.YARD, 0.0);
         UnitMeasurementSystem yard2 = new UnitMeasurementSystem(Length.YARD, 0.0);
@@ -631,5 +623,48 @@ public class QuantityMeasurementTest {
         UnitMeasurementSystem actualValue = tonne.addition(gram, Weight.KILOGRAM);
         UnitMeasurementSystem expectedValue = new UnitMeasurementSystem(Weight.KILOGRAM, 1001.0);
         Assertions.assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void given0FahrenheitAnd0Fahrenheit_ShouldReturnEqual() {
+        UnitMeasurementSystem fahrenheit1 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 0.0);
+        UnitMeasurementSystem fahrenheit2 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 0.0);
+        Assertions.assertEquals(fahrenheit1, fahrenheit2);
+    }
+
+    @Test
+    void givenValue0FahrenheitAnd1Fahrenheit_ShouldReturnNotEqual() {
+        UnitMeasurementSystem fahrenheit1 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 0.0);
+        UnitMeasurementSystem fahrenheit2 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 1.0);
+        Assertions.assertNotEquals(fahrenheit1, fahrenheit2);
+    }
+
+    @Test
+    void given0FahrenheitAndNullFahrenheit_ShouldReturnNotEqual() {
+        UnitMeasurementSystem fahrenheit1 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 0.0);
+        UnitMeasurementSystem fahrenheit2 = null;
+        Assertions.assertNotEquals(fahrenheit1, fahrenheit2);
+    }
+
+    @Test
+    void givenReference0FahrenheitAnd1Fahrenheit_ShouldReturnNotEqual() {
+        UnitMeasurementSystem fahrenheit1 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 0.0);
+        UnitMeasurementSystem fahrenheit2 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 1.0);
+        Assertions.assertNotEquals(fahrenheit1, fahrenheit2);
+    }
+
+    @Test
+    void givenType0FahrenheitAnd1Fahrenheit_ShouldReturnEqual() {
+        UnitMeasurementSystem fahrenheit1 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 0.0);
+        UnitMeasurementSystem fahrenheit2 = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 1.0);
+        Assertions.assertEquals(fahrenheit1.getClass(), fahrenheit2.getClass());
+    }
+
+    @Test
+    void given212FahrenheitAnd100Celsius_WhenCompared_ShouldReturnEqualTemperature() {
+        UnitMeasurementSystem fahrenheit = new UnitMeasurementSystem(Temperature.FAHRENHEIT, 212.0);
+        UnitMeasurementSystem celsius = new UnitMeasurementSystem(Temperature.CELSIUS, 100.0);
+        boolean compareCheck = fahrenheit.compare(celsius);
+        Assertions.assertTrue(compareCheck);
     }
 }

@@ -20,6 +20,6 @@ public enum Length implements MeasurementUnits {
      */
     @Override
     public double convertToBaseUnit(UnitMeasurementSystem unit) {
-        return (Math.round(unit.value * conversionValue));
+        return (unit.value * conversionValue);
     }
 }

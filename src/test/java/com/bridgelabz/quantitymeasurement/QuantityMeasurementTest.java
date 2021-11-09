@@ -1,4 +1,4 @@
-package quantitymeasurement;
+package com.bridgelabz.quantitymeasurement;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

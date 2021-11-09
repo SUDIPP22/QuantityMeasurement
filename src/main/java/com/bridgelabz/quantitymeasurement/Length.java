@@ -1,22 +1,23 @@
-package quantitymeasurement;
+package com.bridgelabz.quantitymeasurement;
 
 /**
  * Purpose : To create enums as instance variables which implements MeasurementUnits class
  * to override a method
  */
-public enum Volume implements MeasurementUnits {
-    GALLON(3.78), LITRE(1.0), MILLILITRE(0.001);
+public enum Length implements MeasurementUnits {
+    CENTIMETER(0.4), FEET(12.0),
+    INCH(1.0), YARD(36.0);
     private final double conversionValue;
 
-    Volume(double conversionBaseUnit) {
-        this.conversionValue = conversionBaseUnit;
+    Length(double conversionToBaseUnit) {
+        this.conversionValue = conversionToBaseUnit;
     }
 
     /**
      * Purpose : To override the convertToBaseUnit() method
      *
-     * @param unit This is the parameter which takes unit volume for conversion
-     * @return the conversion value of that unit volume
+     * @param unit This is the parameter which takes unit length for conversion
+     * @return the conversion value of that unit length
      */
     @Override
     public double convertToBaseUnit(UnitMeasurementSystem unit) {

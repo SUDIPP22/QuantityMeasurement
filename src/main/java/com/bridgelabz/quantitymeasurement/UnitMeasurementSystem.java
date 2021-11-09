@@ -1,4 +1,4 @@
-package quantitymeasurement;
+package com.bridgelabz.quantitymeasurement;
 
 /**
  * Purpose : To simulate Quantity Measurement Program

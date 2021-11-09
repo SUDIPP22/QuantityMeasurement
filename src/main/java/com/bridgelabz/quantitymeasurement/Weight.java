@@ -1,4 +1,4 @@
-package quantitymeasurement;
+package com.bridgelabz.quantitymeasurement;
 
 /**
  * Purpose : To create enums as instance variables which implements MeasurementUnits class

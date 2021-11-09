@@ -1,4 +1,4 @@
-package quantitymeasurement;
+package com.bridgelabz.quantitymeasurement;
 
 import java.util.function.Function;
 
@@ -10,13 +10,13 @@ public enum Temperature implements MeasurementUnits {
     FAHRENHEIT(true), CELSIUS(false);
     final Function<Double, Double> degreeFahrenheitToCelsius = (Double degreeFahrenheit) ->
             (degreeFahrenheit - 32) * 5 / 9;
-    final Function<Double, Double> degreeCelsiusToCelsius = (Double degreeCelsius) ->
+    final Function<Double, Double> degreeCelsius = (Double degreeCelsius) ->
             degreeCelsius;
     final Function<Double, Double> conversionValue;
 
     Temperature(boolean isFahrenheit) {
         if (isFahrenheit) this.conversionValue = degreeFahrenheitToCelsius;
-        else this.conversionValue = degreeCelsiusToCelsius;
+        else this.conversionValue = degreeCelsius;
     }
 
     /**
